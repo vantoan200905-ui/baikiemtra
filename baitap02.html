@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 02 - Game Đoán Số (231A010167)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .header-nav { /* Dùng lại CSS này từ style.css nếu có */ }
+        .game-area {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Confetti Animation (đơn giản bằng CSS) */
+        .confetti {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            overflow: hidden; z-index: 1000;
+        }
+        .confetti-piece {
+            position: absolute;
+            width: 8px; height: 15px;
+            background: #ff0; 
+            opacity: 0;
+            animation: fall 5s ease-in forwards;
+            transform-origin: 50% 50%;
+        }
+        @keyframes fall {
+            0% { transform: translate(-50%, -100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translate(-50%, 100vh) rotate(1080deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-nav">
+        <a href="index.html">← Về Trang Chủ</a>
+        <h1>GAME ĐOÁN SỐ NGẪU NHIÊN</h1>
+    </div>
+    <div id="game-area" class="game-area">
+        <h2>Đoán Số (1-100)</h2>
+        <p>Nhập số bạn đoán:</p>
+        <input type="number" id="guess-input" min="1" max="100" required>
+        <button id="submit-guess">Đoán</button>
+        <p id="message" style="font-weight: bold; margin-top: 15px;">Hãy bắt đầu đoán!</p>
+        <p id="attempts">Số lần thử: 0</p>
+        <button id="reset-game" style="display: none;">Chơi Lại</button>
+    </div>
+    <div id="confetti-container" class="confetti"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

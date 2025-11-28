@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 01 - TODO MATRIX (231A010167)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header-nav">
+        <a href="index.html">← Về Trang Chủ</a>
+        <h1>ỨNG DỤNG QUẢN LÝ CÔNG VIỆC THÔNG MINH</h1>
+    </div>
+
+    <div class="container-todo">
+        <div class="info-column">
+            <div class="profile">
+                <img src="https://scontent.fsgn2-10.fna.fbcdn.net/v/t39.30808-1/550188770_1407403063698204_7830735545528435806_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeG1LM1ataxaP79NYrNzMKZ8MMes9jjkno8wx6z2OOSej2Yz8LYMEaoLGQUaWX_fcIKXmvOrzj27KEZjZDnTEnwO&_nc_ohc=ajtEjr1ArJYQ7kNvwEnK2IT&_nc_oc=Adn3-NKNwlf8JytLD88tQTdLZvbvpxyQHsvNTvA8afEBC6Q8pnw6m-fPr1Pi34xA8Mk&_nc_zt=24&_nc_ht=scontent.fsgn2-10.fna&_nc_gid=TFybVhrTBpkwIPwlPir1pA&oh=00_AfiMFQab44Ou4RAy1eugd1QZvN7VvmlN-qyl_MhxPvqf_Q&oe=692EE126" alt="Ảnh Chân Dung Võ Văn Toàn" class="avatar">
+                <h2>Võ Văn Toàn</h2>
+                <p>MSSV: 231A010167</p>
+            </div>
+            <hr>
+            <form id="task-form">
+                <h3>Thêm Công Việc Mới</h3>
+                <label for="task-name">Tên Công Việc:</label>
+                <input type="text" id="task-name" required><br>
+                
+                <label for="task-priority">Độ Ưu Tiên (1-4):</label>
+                <select id="task-priority" required>
+                    <option value="1">1: Quan trọng & Khẩn cấp</option>
+                    <option value="2">2: Quan trọng - Không khẩn cấp</option>
+                    <option value="3">3: Không quan trọng - Khẩn cấp</option>
+                    <option value="4">4: Không quan trọng - Không khẩn cấp</option>
+                </select><br>
+                <button type="submit" id="add-task-btn">Thêm Công Việc</button>
+            </form>
+        </div>
+        
+        <div class="task-board">
+            <h2>Ma Trận Eisenhower</h2>
+            <div class="matrix-grid">
+                <div class="matrix-box priority-1" id="p1">
+                    <h3>1. Quan trọng & Khẩn cấp (Làm Ngay)</h3>
+                    <ul class="task-list" data-priority="1"></ul>
+                </div>
+                <div class="matrix-box priority-2" id="p2">
+                    <h3>2. Quan trọng - K. khẩn cấp (Lên lịch)</h3>
+                    <ul class="task-list" data-priority="2"></ul>
+                </div>
+                <div class="matrix-box priority-3" id="p3">
+                    <h3>3. K. quan trọng - Khẩn cấp (Ủy thác)</h3>
+                    <ul class="task-list" data-priority="3"></ul>
+                </div>
+                <div class="matrix-box priority-4" id="p4">
+                    <h3>4. K. quan trọng - K. khẩn cấp (Loại bỏ)</h3>
+                    <ul class="task-list" data-priority="4"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
